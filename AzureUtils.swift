@@ -10,7 +10,7 @@ import Foundation
 
 
 
-func setupClientForStorage() -> AZSCloudBlobClient?{
+func setupClientForStorage() -> AZSCloudStorageAccount?{
     
         do{
             let sas = "sv=2015-04-05&ss=bfqt&srt=sco&sp=rwdlacup&se=2016-10-25T17:14:23Z&st=2016-10-25T09:14:23Z&spr=https&sig=Qdhs0oMhAjuar4EPi9k%2FOZSJsJXKeQ0baVhsvhHCNcM%3D"
@@ -20,9 +20,9 @@ func setupClientForStorage() -> AZSCloudBlobClient?{
             
             let account = try AZSCloudStorageAccount(credentials: credentials, useHttps: true)
             
-            let client = account.getBlobClient()
+            
           
-            return client!
+            return account
             
         }catch let error{
             print(error)
@@ -32,11 +32,9 @@ func setupClientForStorage() -> AZSCloudBlobClient?{
     
 }
 
-func createNewContainer(nameContaniner name:String, blobClient account:AZSCloudStorageAccount ) -> Bool{
+func createNewContainer(nameContaniner name:String, blobClient account:AZSCloudStorageAccount ) -> AZSCloudBlobContainer?{
     
-    // error al crear container
-    
-    var containerCreate = false
+  
     
     //Obtengo el cliente
     
@@ -50,25 +48,25 @@ func createNewContainer(nameContaniner name:String, blobClient account:AZSCloudS
         
         guard let _ = error else{
             print(error)
-            containerCreate = false;
+           
             return
         }
         
-        containerCreate = true
+        
     })
     
     
-    return containerCreate
+    return blobContainer
     
     
 }
 
 
-func upLoadBlobWithSAS(tokenSAS sas:String, contanier: AZSCloudBlobContainer, data:Data) -> String{
+func upLoadBlobWithSAS(container: AZSCloudBlobContainer, data:Data) -> String{
     
     var blobName = UUID().uuidString
     
-    let blog = contanier.blockBlobReference(fromName: blobName)
+    let blog = container.blockBlobReference(fromName: blobName)
     
     blog.upload(from: data) { (error) in
         
@@ -84,5 +82,68 @@ func upLoadBlobWithSAS(tokenSAS sas:String, contanier: AZSCloudBlobContainer, da
     return blobName
     
 }
+
+func eraseBlobBlock(_ theBlob: AZSCloudBlockBlob) {
+    
+    theBlob.delete { (error) in
+        
+        if let _ = error {
+            print(error)
+            return
+        }
+        
+       
+        
+    }
+}
+
+
+
+func readAllBlobs(container: AZSCloudBlobContainer)  {
+    
+    var itemBlob = [AZSCloudBlockBlob]()
+    
+    container.listBlobsSegmented(with: nil,
+                                  prefix: nil,
+                                  useFlatBlobListing: true,
+                                  blobListingDetails: AZSBlobListingDetails.all,
+                                  maxResults: -1,
+                                  completionHandler: { (error, results) in
+                                    
+                                    if let _ = error {
+                                        print(error)
+                                        return
+                                    }
+                                    
+                                    
+                                    
+                                    for items in (results?.blobs)! {
+                                        itemBlob.append(items as! AZSCloudBlockBlob)
+                                    }
+                                    
+                                   
+    })
+    
+}
+
+func downloadBlobFromStorage(_ theBlob: AZSCloudBlockBlob) -> Data {
+    
+    var dataBlog:Data?
+    
+    theBlob.downloadToData { (error, data) in
+        
+        if let _ = error {
+            print(error)
+            return
+        }
+        
+        dataBlog = data
+        
+    }
+
+    return dataBlog!
+}
+
+
 
 

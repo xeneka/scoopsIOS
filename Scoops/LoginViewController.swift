@@ -12,8 +12,12 @@ class LoginViewController: UIViewController {
 
     @IBAction func AutorOption(_ sender: AnyObject) {
         
+        
+        
         let AutorStoryBoards = UIStoryboard(name: "Autors", bundle: Bundle.main)
         let vc = AutorStoryBoards.instantiateViewController(withIdentifier: "AutorScene")
+        
+       
         
         present(vc, animated: true, completion: nil)
         

@@ -30,6 +30,10 @@ class AutorsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let azureApi = dataStackAzure();
+        azureApi.login(provider: "facebook", controller: self)
+        
     }
 
     override func didReceiveMemoryWarning() {

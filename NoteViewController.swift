@@ -11,15 +11,27 @@ import UIKit
 class NoteViewController: UIViewController {
 
     
-     
+    var noteView:AutorsViewModel? = nil
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        
+      
+        
+        
         // Do any additional setup after loading the view.
     }
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -32,6 +44,16 @@ class NoteViewController: UIViewController {
     
     @IBOutlet weak var textNews: UITextView!
     
+    @IBAction func saveNote(_ sender: AnyObject) {
+        
+
+        
+        
+        noteView = AutorsViewModel(title: titleNews.text!,Author: "Autor1", Image: photoImage.image!, text: textNews.text  )
+        noteView?.saveNews()
+        
+        
+    }
     
     @IBAction func takePhoto(_ sender: AnyObject) {
         

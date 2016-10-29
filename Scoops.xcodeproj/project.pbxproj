@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A90738281DC477E7009B97F5 /* AutorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90738271DC477E6009B97F5 /* AutorsViewModel.swift */; };
+		A907382C1DC5047D009B97F5 /* AzureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A907382B1DC5047D009B97F5 /* AzureStorage.swift */; };
 		A98E56B91DBC96A800F8725F /* AutorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E56B81DBC96A800F8725F /* AutorsTableViewController.swift */; };
 		A98E56BB1DBC97C300F8725F /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E56BA1DBC97C300F8725F /* NoteViewController.swift */; };
 		A98E56BD1DBC9B5400F8725F /* ListNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E56BC1DBC9B5400F8725F /* ListNewsTableViewController.swift */; };
 		A98E56BF1DBC9DF500F8725F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E56BE1DBC9DF500F8725F /* Utils.swift */; };
 		A98E56C21DBD0FC200F8725F /* modelNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E56C11DBD0FC200F8725F /* modelNews.swift */; };
+		A98F9D171DC113B000268C9D /* AzureApiUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F9D161DC113B000268C9D /* AzureApiUtils.swift */; };
+		A98F9D191DC1333F00268C9D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98F9D181DC1333F00268C9D /* WebKit.framework */; };
 		A9CB2A831DBBEEC100EA4500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB2A821DBBEEC100EA4500 /* AppDelegate.swift */; };
 		A9CB2A851DBBEEC100EA4500 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB2A841DBBEEC100EA4500 /* LoginViewController.swift */; };
 		A9CB2A881DBBEEC100EA4500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9CB2A861DBBEEC100EA4500 /* Main.storyboard */; };
@@ -19,32 +23,22 @@
 		A9CB2A8D1DBBEEC100EA4500 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9CB2A8B1DBBEEC100EA4500 /* LaunchScreen.storyboard */; };
 		A9CB2A961DBBF11A00EA4500 /* Readers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9CB2A951DBBF11A00EA4500 /* Readers.storyboard */; };
 		A9CB2A991DBBF47C00EA4500 /* Autors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9CB2A981DBBF47C00EA4500 /* Autors.storyboard */; };
-		A9E3C3F91DBF5C9000DD570B /* ScoopsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E3C3F81DBF5C9000DD570B /* ScoopsTests.swift */; };
-		A9E3C4001DBF5CB700DD570B /* testAzureFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E3C3F01DBF583C00DD570B /* testAzureFunction.swift */; };
-		A9E3C4031DBF5DA300DD570B /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EFE97E1DBE524C0039B5FF /* MicrosoftAzureMobile.framework */; };
-		A9E3C4071DBF5EA700DD570B /* AZSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EFE9841DBE59E40039B5FF /* AZSClient.framework */; };
 		A9EFE9791DBE4DFF0039B5FF /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EFE9781DBE4DFF0039B5FF /* libxml2.2.tbd */; };
 		A9EFE97F1DBE524C0039B5FF /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EFE97E1DBE524C0039B5FF /* MicrosoftAzureMobile.framework */; };
 		A9EFE9851DBE59E40039B5FF /* AZSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EFE9841DBE59E40039B5FF /* AZSClient.framework */; };
 		A9EFE9871DBEA2760039B5FF /* AzureUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EFE9861DBEA2760039B5FF /* AzureUtils.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A9E3C3FB1DBF5C9000DD570B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A9CB2A771DBBEEC100EA4500 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A9CB2A7E1DBBEEC100EA4500;
-			remoteInfo = Scoops;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		A90738271DC477E6009B97F5 /* AutorsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutorsViewModel.swift; sourceTree = "<group>"; };
+		A907382B1DC5047D009B97F5 /* AzureStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureStorage.swift; sourceTree = "<group>"; };
 		A98E56B81DBC96A800F8725F /* AutorsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutorsTableViewController.swift; sourceTree = "<group>"; };
 		A98E56BA1DBC97C300F8725F /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		A98E56BC1DBC9B5400F8725F /* ListNewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNewsTableViewController.swift; sourceTree = "<group>"; };
 		A98E56BE1DBC9DF500F8725F /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		A98E56C11DBD0FC200F8725F /* modelNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = modelNews.swift; sourceTree = "<group>"; };
+		A98F9D161DC113B000268C9D /* AzureApiUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureApiUtils.swift; sourceTree = "<group>"; };
+		A98F9D181DC1333F00268C9D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A9CB2A7F1DBBEEC100EA4500 /* Scoops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scoops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CB2A821DBBEEC100EA4500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9CB2A841DBBEEC100EA4500 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -54,8 +48,6 @@
 		A9CB2A8E1DBBEEC100EA4500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9CB2A951DBBF11A00EA4500 /* Readers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Readers.storyboard; sourceTree = "<group>"; };
 		A9CB2A981DBBF47C00EA4500 /* Autors.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Autors.storyboard; path = Scoops/Autors.storyboard; sourceTree = "<group>"; };
-		A9E3C3F01DBF583C00DD570B /* testAzureFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testAzureFunction.swift; sourceTree = "<group>"; };
-		A9E3C3F61DBF5C9000DD570B /* ScoopsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoopsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E3C3F81DBF5C9000DD570B /* ScoopsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoopsTests.swift; sourceTree = "<group>"; };
 		A9E3C3FA1DBF5C9000DD570B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9EFE9781DBE4DFF0039B5FF /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
@@ -70,18 +62,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98F9D191DC1333F00268C9D /* WebKit.framework in Frameworks */,
 				A9EFE9791DBE4DFF0039B5FF /* libxml2.2.tbd in Frameworks */,
 				A9EFE97F1DBE524C0039B5FF /* MicrosoftAzureMobile.framework in Frameworks */,
 				A9EFE9851DBE59E40039B5FF /* AZSClient.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A9E3C3F31DBF5C9000DD570B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A9E3C4071DBF5EA700DD570B /* AZSClient.framework in Frameworks */,
-				A9E3C4031DBF5DA300DD570B /* MicrosoftAzureMobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +83,6 @@
 		A9CB2A761DBBEEC100EA4500 = {
 			isa = PBXGroup;
 			children = (
-				A9E3C4041DBF5DDB00DD570B /* Test */,
 				A9E3C4051DBF5DF300DD570B /* AzureUtils */,
 				A9E3C4061DBF5DFE00DD570B /* Models */,
 				A98E56C01DBC9DFD00F8725F /* Utils */,
@@ -117,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				A9CB2A7F1DBBEEC100EA4500 /* Scoops.app */,
-				A9E3C3F61DBF5C9000DD570B /* ScoopsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,6 +140,7 @@
 				A9CB2A981DBBF47C00EA4500 /* Autors.storyboard */,
 				A98E56B81DBC96A800F8725F /* AutorsTableViewController.swift */,
 				A98E56BA1DBC97C300F8725F /* NoteViewController.swift */,
+				A90738271DC477E6009B97F5 /* AutorsViewModel.swift */,
 			);
 			name = Readers;
 			sourceTree = "<group>";
@@ -171,18 +154,12 @@
 			path = ScoopsTests;
 			sourceTree = "<group>";
 		};
-		A9E3C4041DBF5DDB00DD570B /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				A9E3C3F01DBF583C00DD570B /* testAzureFunction.swift */,
-			);
-			name = Test;
-			sourceTree = "<group>";
-		};
 		A9E3C4051DBF5DF300DD570B /* AzureUtils */ = {
 			isa = PBXGroup;
 			children = (
 				A9EFE9861DBEA2760039B5FF /* AzureUtils.swift */,
+				A98F9D161DC113B000268C9D /* AzureApiUtils.swift */,
+				A907382B1DC5047D009B97F5 /* AzureStorage.swift */,
 			);
 			name = AzureUtils;
 			sourceTree = "<group>";
@@ -198,6 +175,7 @@
 		A9EFE9771DBE4DFF0039B5FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A98F9D181DC1333F00268C9D /* WebKit.framework */,
 				A9EFE9841DBE59E40039B5FF /* AZSClient.framework */,
 				A9EFE9781DBE4DFF0039B5FF /* libxml2.2.tbd */,
 				A9EFE97E1DBE524C0039B5FF /* MicrosoftAzureMobile.framework */,
@@ -225,24 +203,6 @@
 			productReference = A9CB2A7F1DBBEEC100EA4500 /* Scoops.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A9E3C3F51DBF5C9000DD570B /* ScoopsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A9E3C3FD1DBF5C9000DD570B /* Build configuration list for PBXNativeTarget "ScoopsTests" */;
-			buildPhases = (
-				A9E3C3F21DBF5C9000DD570B /* Sources */,
-				A9E3C3F31DBF5C9000DD570B /* Frameworks */,
-				A9E3C3F41DBF5C9000DD570B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A9E3C3FC1DBF5C9000DD570B /* PBXTargetDependency */,
-			);
-			name = ScoopsTests;
-			productName = ScoopsTests;
-			productReference = A9E3C3F61DBF5C9000DD570B /* ScoopsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -258,12 +218,6 @@
 						DevelopmentTeam = KR3B4933S2;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
-					};
-					A9E3C3F51DBF5C9000DD570B = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = KR3B4933S2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = A9CB2A7E1DBBEEC100EA4500;
 					};
 				};
 			};
@@ -281,7 +235,6 @@
 			projectRoot = "";
 			targets = (
 				A9CB2A7E1DBBEEC100EA4500 /* Scoops */,
-				A9E3C3F51DBF5C9000DD570B /* ScoopsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -299,13 +252,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A9E3C3F41DBF5C9000DD570B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -313,35 +259,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A907382C1DC5047D009B97F5 /* AzureStorage.swift in Sources */,
 				A98E56BB1DBC97C300F8725F /* NoteViewController.swift in Sources */,
 				A98E56B91DBC96A800F8725F /* AutorsTableViewController.swift in Sources */,
 				A98E56BD1DBC9B5400F8725F /* ListNewsTableViewController.swift in Sources */,
 				A9EFE9871DBEA2760039B5FF /* AzureUtils.swift in Sources */,
 				A9CB2A851DBBEEC100EA4500 /* LoginViewController.swift in Sources */,
 				A98E56C21DBD0FC200F8725F /* modelNews.swift in Sources */,
+				A90738281DC477E7009B97F5 /* AutorsViewModel.swift in Sources */,
 				A9CB2A831DBBEEC100EA4500 /* AppDelegate.swift in Sources */,
+				A98F9D171DC113B000268C9D /* AzureApiUtils.swift in Sources */,
 				A98E56BF1DBC9DF500F8725F /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A9E3C3F21DBF5C9000DD570B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A9E3C3F91DBF5C9000DD570B /* ScoopsTests.swift in Sources */,
-				A9E3C4001DBF5CB700DD570B /* testAzureFunction.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A9E3C3FC1DBF5C9000DD570B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A9CB2A7E1DBBEEC100EA4500 /* Scoops */;
-			targetProxy = A9E3C3FB1DBF5C9000DD570B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A9CB2A861DBBEEC100EA4500 /* Main.storyboard */ = {
@@ -495,42 +427,6 @@
 			};
 			name = Release;
 		};
-		A9E3C3FE1DBF5C9000DD570B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = KR3B4933S2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = ScoopsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.benavente-cardador.ScoopsTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scoops.app/Scoops";
-			};
-			name = Debug;
-		};
-		A9E3C3FF1DBF5C9000DD570B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = KR3B4933S2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = ScoopsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.benavente-cardador.ScoopsTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scoops.app/Scoops";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -551,14 +447,6 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		};
-		A9E3C3FD1DBF5C9000DD570B /* Build configuration list for PBXNativeTarget "ScoopsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A9E3C3FE1DBF5C9000DD570B /* Debug */,
-				A9E3C3FF1DBF5C9000DD570B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

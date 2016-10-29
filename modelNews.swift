@@ -13,6 +13,8 @@ enum typeBlob{
     case img, pdf
 }
 
+typealias coordenadasGPS = (Double , Double)
+
 
 struct  dataNews {
     var title:String
@@ -20,6 +22,24 @@ struct  dataNews {
     var blob:Data
     var typeBlog:typeBlob
     var author:String
-    var coordenadas:(Double, Double)
-    var urlData:NSURL
+    var coordenadas:coordenadasGPS
+    var urlData:String
+    
+    init(title:String, text:String, blob:Data, authors:String, coordenadas:coordenadasGPS, typeBlog:typeBlob, urlFromBlob:String) {
+        
+        self.title = title
+        self.text = text
+        self.blob = blob
+        self.author = authors
+        self.coordenadas = coordenadas
+        self.urlData = urlFromBlob
+        self.typeBlog = typeBlog
+        
+        
+    }
+    
+    
+    
 }
+
+
