@@ -11,6 +11,8 @@ import UIKit
 class ListNewsTableViewController: UITableViewController {
 
     
+    var model = [dataNews]()
+    
     @IBAction internal func ReturnLogin(_ sender: AnyObject){
          present(returnLoginScene(), animated: true, completion: nil)
     }
@@ -24,7 +26,34 @@ class ListNewsTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()+
+       
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        if model.isEmpty {
+        
+        let azu = dataStackAzure()
+        azu.readNewPublished { (data) in
+            
+            let image = UIImageJPEGRepresentation(UIImage(named: "robot.png")!,0.9)
+            
+            for each in data as! [Dictionary<String, AnyObject>] {
+                
+                
+                
+                let newItem = dataNews(title: each["title"] as! String, text: each["text"] as! String, blob: image!, authors: "Auto", coordenadas: (0,0), typeBlog: .img, urlFromBlob: each["urlPhoto"] as! String, visible: each["visible"] as! Bool, idnew:each["id"] as! String, publicada: each["publicada"] as! Bool)
+                self.model.append(newItem)
+                
+            }
+            
+            self.tableView.reloadData()
+        }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,24 +65,37 @@ class ListNewsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return model.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "readercell", for: indexPath) as! ReaderTableViewCell
 
         // Configure the cell...
 
+        let data = model[indexPath.row]
+        
+        cell.titleNew.text = data.title
+        
         return cell
     }
-    */
+ 
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = model[indexPath.row]
+        
+        
+        performSegue(withIdentifier: "detailNew", sender: item)
+
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -89,14 +131,29 @@ class ListNewsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "detailNew" {
+            
+            if sender is dataNews {
+                let vc = segue.destination as? detailNewViewController
+                vc?.model = sender as! dataNews
+            }
+            
+        
+            
+            
+        }
+        
+        
+        
     }
-    */
+ 
 
 }

@@ -80,7 +80,8 @@ class AutorsTableViewController: UITableViewController {
         cell.changeSituacionValue.addTarget(self, action: #selector(self.buttonClicked(sender:)), for: UIControlEvents.touchUpInside)
         
         
-        if data.visible {
+        
+        if data.publicada {
             cell.situacionNew.text = "Publicada"
         }else{
             cell.situacionNew.text = "No publicada"
@@ -151,7 +152,7 @@ extension AutorsTableViewController {
                 
                 
                 
-                let newItem = dataNews(title: each["title"] as! String, text: each["text"] as! String, blob: self.image!, authors: "Auto", coordenadas: (0,0), typeBlog: .img, urlFromBlob: each["urlPhoto"] as! String, visible: each["visible"] as! Bool, idnew:each["id"] as! String)
+                let newItem = dataNews(title: each["title"] as! String, text: each["text"] as! String, blob: self.image!, authors: "Auto", coordenadas: (0,0), typeBlog: .img, urlFromBlob: each["urlPhoto"] as! String, visible: each["visible"] as! Bool, idnew:each["id"] as! String, publicada: each["publicada"] as! Bool)
                 self.model.append(newItem)
                 
             }
@@ -169,7 +170,9 @@ extension AutorsTableViewController {
         let buttonRow = sender.tag
         print(buttonRow)
         
-        azureApi.findNew(idnew: self.model[buttonRow].idnew! )
+        azureApi.publishNew(idnew: self.model[buttonRow].idnew! )
+        
+        // OJO Meter clouser para informar que ha ido bien. Luego notificacion para cambiar la celda.
         
         
     }    

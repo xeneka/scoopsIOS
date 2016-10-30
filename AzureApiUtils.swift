@@ -17,11 +17,13 @@ class dataStackAzure{
     }
     
     
+    //MARK: - inserta una noticia nueva
+    
     func insertNew(title:String, text:String, latitude:NSNumber, longitude:NSNumber, urlPhoto:String){
         
         let tableMS = client.table(withName: "Autors")
         
-        tableMS.insert(["title" : title, "text": text, "latitude":latitude, "longitude":longitude, "urlPhoto":urlPhoto, "visible":false]) { (result, error) in
+        tableMS.insert(["title" : title, "text": text, "latitude":latitude, "longitude":longitude, "urlPhoto":urlPhoto, "visible":false, "publicada":false]) { (result, error) in
             
             if let _ = error {
                 print(error)
@@ -34,16 +36,10 @@ class dataStackAzure{
         
     }
     
-    func makeVisibleNew(idNew:String){
-        
-        let tableMS = client.table(withName: "Autors")
-        
-        //tableMS.update(<#T##item: [AnyHashable : Any]##[AnyHashable : Any]#>, completion: <#T##MSItemBlock?##MSItemBlock?##([AnyHashable : Any]?, Error?) -> Void#>)
-        
-        
-    }
     
-    func findNew(idnew:String){
+    //MARK: - Recibe el id de una noticia y la marca como publicada
+    
+    func publishNew(idnew:String){
         
         let tableMS = client.table(withName: "Autors")
         
@@ -69,7 +65,7 @@ class dataStackAzure{
                     for item in items.items! {
                         
                         var itemNew = item as! [String:AnyObject]
-                        itemNew["visible"] = 1 as AnyObject?
+                        itemNew["publicada"] = 1 as AnyObject?
                         tableMS.update(itemNew, completion: { (result, error) in
                             
                             if let _ = error{
@@ -106,7 +102,6 @@ class dataStackAzure{
         let tableMS = client.table(withName: "Autors")
         var data: [Dictionary<String, AnyObject>]? = []
         
-        //        let predicate = NSPredicate(format: "name == 'Juan Martin'")
         
         tableMS.read { (results, error) in
             if let _ = error {
@@ -114,11 +109,7 @@ class dataStackAzure{
                 return
             }
             
-//            if !((self.model?.isEmpty)!) {
-//                self.model?.removeAll()
-//            }
-            
-            
+       
             
             if let items = results {
                 
@@ -139,6 +130,47 @@ class dataStackAzure{
         
         return data!
     }
+    
+    
+    //MARK: - read table para usuarios - custom api
+    
+    func readNewPublished(_ completion:@escaping (_ result:Any)->()) {
+        
+        let tableMS = client.table(withName: "Autors")
+        var data: [Dictionary<String, AnyObject>]? = []
+        
+        client.invokeAPI("readPublishedRecord", body: nil, httpMethod: "GET", parameters: nil, headers: nil,
+                          completion: { ( results, response, error) in
+                            
+                            if let _ = error {
+                                print(error)
+                                return
+                            }
+                            
+                            if let items = results {
+  
+                                for each in items as! [AnyObject] {
+                                    
+                                        data?.append(each as! [String:AnyObject])
+        
+                                }
+                                
+
+                                
+                                completion(data)
+                                
+                            }
+                            
+                            
+                            
+                            
+        })
+    }
+    
+    
+    
+    
+    
     
     
     func login(provider: String, controller:UIViewController){

@@ -15,7 +15,7 @@ final class noteViewModel{
     
     init(title:String, Author:String, Image:UIImage, text:String ){
         
-        model = dataNews(title: title, text: text, blob: UIImageJPEGRepresentation(Image, 0.0)!, authors: Author, coordenadas: (0,0), typeBlog: .img, urlFromBlob: UUID().uuidString, visible:false )
+        model = dataNews(title: title, text: text, blob: UIImageJPEGRepresentation(Image, 0.0)!, authors: Author, coordenadas: (0,0), typeBlog: .img, urlFromBlob: UUID().uuidString, visible:false ,publicada:false)
         
     }
     

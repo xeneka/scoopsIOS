@@ -25,9 +25,10 @@ struct  dataNews {
     var coordenadas:coordenadasGPS
     var urlData:String
     var visible:Bool
+    var publicada:Bool
     var idnew:String?
     
-    init(title:String, text:String, blob:Data, authors:String, coordenadas:coordenadasGPS, typeBlog:typeBlob, urlFromBlob:String, visible:Bool) {
+    init(title:String, text:String, blob:Data, authors:String, coordenadas:coordenadasGPS, typeBlog:typeBlob, urlFromBlob:String, visible:Bool, publicada:Bool) {
         
         self.title = title
         self.text = text
@@ -37,12 +38,13 @@ struct  dataNews {
         self.urlData = urlFromBlob
         self.typeBlog = typeBlog
         self.visible = visible
+        self.publicada = publicada
         
         
         
     }
     
-    init(title:String, text:String, blob:Data, authors:String, coordenadas:coordenadasGPS, typeBlog:typeBlob, urlFromBlob:String, visible:Bool, idnew:String) {
+    init(title:String, text:String, blob:Data, authors:String, coordenadas:coordenadasGPS, typeBlog:typeBlob, urlFromBlob:String, visible:Bool, idnew:String, publicada:Bool) {
         
         self.title = title
         self.text = text
@@ -53,6 +55,7 @@ struct  dataNews {
         self.typeBlog = typeBlog
         self.visible = visible
         self.idnew = idnew
+        self.publicada = publicada
         
         
         
