@@ -11,8 +11,14 @@ import UIKit
 class AutorsTableViewController: UITableViewController {
 
     
+    var model = [dataNews]()
+    
    
     
+    let azureApi = dataStackAzure()
+    
+    
+    let image = UIImageJPEGRepresentation(UIImage(named: "robot.png")!,0.9)
     
     @IBAction func ReturnLogin(_ sender: AnyObject) {
         
@@ -31,8 +37,14 @@ class AutorsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        let azureApi = dataStackAzure();
-        azureApi.login(provider: "facebook", controller: self)
+        //let azureApi = dataStackAzure();
+        //azureApi.login(provider: "facebook", controller: self)
+        loadNews()
+        
+        
+        let prueba = dataNews(title: "Titulo noticia", text: "Este es el titulo", blob: image!, authors: "Auto", coordenadas: (0,0), typeBlog: .img, urlFromBlob: "URLDAD")
+        model.append(prueba)
+        
         
     }
 
@@ -45,23 +57,26 @@ class AutorsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return model.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellnews", for: indexPath) as! NewsTableViewCell
 
         // Configure the cell...
 
+        cell.textNew.text = model[indexPath.row].title
+        
+        cell.ImageNew.image = UIImage(data: model[indexPath.row].blob)
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -108,4 +123,33 @@ class AutorsTableViewController: UITableViewController {
     }
     */
 
+}
+
+
+extension AutorsTableViewController {
+    
+    func loadNews(){
+        
+        var data = azureApi.readAllItemsInTable{ (data: Any) in
+         
+            
+            
+            for each in data as! [Dictionary<String, AnyObject>] {
+                
+                
+                
+                let newItem = dataNews(title: each["title"] as! String, text: each["text"] as! String, blob: self.image!, authors: "Auto", coordenadas: (0,0), typeBlog: .img, urlFromBlob: each["urlPhoto"] as! String)
+                self.model.append(newItem)
+                
+            }
+            
+            self.tableView.reloadData()
+            
+        }
+        
+        
+        
+    }
+    
+    
 }

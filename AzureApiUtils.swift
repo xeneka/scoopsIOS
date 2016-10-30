@@ -40,9 +40,10 @@ class dataStackAzure{
     
     
     
-    func readAllItemsInTable() {
+    func readAllItemsInTable(_ completion:@escaping (_ result:Any)->()) -> [Dictionary<String, AnyObject>] {
         
         let tableMS = client.table(withName: "Autors")
+        var data: [Dictionary<String, AnyObject>]? = []
         
         //        let predicate = NSPredicate(format: "name == 'Juan Martin'")
         
@@ -56,22 +57,26 @@ class dataStackAzure{
 //                self.model?.removeAll()
 //            }
             
+            
+            
             if let items = results {
-                
-                for item in items.items! {
-                    
-                    print(item);
-                    
-                    //self.model?.append(item as! [String : AnyObject])
-                }
                 
                
                 
+                for item in items.items! {
+                    
+                    data?.append(item as! [String:AnyObject])
+                }
+                
+                completion(data)
+                
             }
+            
+            
             
         }
         
-        
+        return data!
     }
     
     

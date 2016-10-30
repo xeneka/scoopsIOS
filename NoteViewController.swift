@@ -11,7 +11,7 @@ import UIKit
 class NoteViewController: UIViewController {
 
     
-    var noteView:AutorsViewModel? = nil
+    var noteView:noteViewModel? = nil
     
     
     override func viewDidLoad() {
@@ -49,7 +49,7 @@ class NoteViewController: UIViewController {
 
         
         
-        noteView = AutorsViewModel(title: titleNews.text!,Author: "Autor1", Image: photoImage.image!, text: textNews.text  )
+        noteView = noteViewModel(title: titleNews.text!,Author: "Autor1", Image: photoImage.image!, text: textNews.text  )
         noteView?.saveNews()
         
         

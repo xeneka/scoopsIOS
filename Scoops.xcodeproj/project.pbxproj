@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A90738281DC477E7009B97F5 /* AutorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90738271DC477E6009B97F5 /* AutorsViewModel.swift */; };
+		A90738281DC477E7009B97F5 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90738271DC477E6009B97F5 /* NoteViewModel.swift */; };
 		A907382C1DC5047D009B97F5 /* AzureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A907382B1DC5047D009B97F5 /* AzureStorage.swift */; };
+		A90738341DC52E47009B97F5 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90738331DC52E47009B97F5 /* NewsTableViewCell.swift */; };
+		A90738361DC53529009B97F5 /* AutorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90738351DC53529009B97F5 /* AutorsViewModel.swift */; };
+		A90738381DC5542D009B97F5 /* robot.png in Resources */ = {isa = PBXBuildFile; fileRef = A90738371DC5542D009B97F5 /* robot.png */; };
 		A98E56B91DBC96A800F8725F /* AutorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E56B81DBC96A800F8725F /* AutorsTableViewController.swift */; };
 		A98E56BB1DBC97C300F8725F /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E56BA1DBC97C300F8725F /* NoteViewController.swift */; };
 		A98E56BD1DBC9B5400F8725F /* ListNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E56BC1DBC9B5400F8725F /* ListNewsTableViewController.swift */; };
@@ -30,8 +33,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A90738271DC477E6009B97F5 /* AutorsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutorsViewModel.swift; sourceTree = "<group>"; };
+		A90738271DC477E6009B97F5 /* NoteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 		A907382B1DC5047D009B97F5 /* AzureStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureStorage.swift; sourceTree = "<group>"; };
+		A90738331DC52E47009B97F5 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		A90738351DC53529009B97F5 /* AutorsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutorsViewModel.swift; sourceTree = "<group>"; };
+		A90738371DC5542D009B97F5 /* robot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = robot.png; sourceTree = "<group>"; };
 		A98E56B81DBC96A800F8725F /* AutorsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutorsTableViewController.swift; sourceTree = "<group>"; };
 		A98E56BA1DBC97C300F8725F /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		A98E56BC1DBC9B5400F8725F /* ListNewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNewsTableViewController.swift; sourceTree = "<group>"; };
@@ -83,11 +89,12 @@
 		A9CB2A761DBBEEC100EA4500 = {
 			isa = PBXGroup;
 			children = (
+				A90738371DC5542D009B97F5 /* robot.png */,
 				A9E3C4051DBF5DF300DD570B /* AzureUtils */,
 				A9E3C4061DBF5DFE00DD570B /* Models */,
 				A98E56C01DBC9DFD00F8725F /* Utils */,
-				A9CB2A9A1DBBF48600EA4500 /* Readers */,
-				A9CB2A971DBBF12000EA4500 /* Autores */,
+				A9CB2A9A1DBBF48600EA4500 /* Autor */,
+				A9CB2A971DBBF12000EA4500 /* Reader */,
 				A9CB2A811DBBEEC100EA4500 /* Scoops */,
 				A9E3C3F71DBF5C9000DD570B /* ScoopsTests */,
 				A9CB2A801DBBEEC100EA4500 /* Products */,
@@ -125,24 +132,26 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
-		A9CB2A971DBBF12000EA4500 /* Autores */ = {
+		A9CB2A971DBBF12000EA4500 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
 				A9CB2A951DBBF11A00EA4500 /* Readers.storyboard */,
 				A98E56BC1DBC9B5400F8725F /* ListNewsTableViewController.swift */,
 			);
-			name = Autores;
+			name = Reader;
 			sourceTree = "<group>";
 		};
-		A9CB2A9A1DBBF48600EA4500 /* Readers */ = {
+		A9CB2A9A1DBBF48600EA4500 /* Autor */ = {
 			isa = PBXGroup;
 			children = (
 				A9CB2A981DBBF47C00EA4500 /* Autors.storyboard */,
 				A98E56B81DBC96A800F8725F /* AutorsTableViewController.swift */,
+				A90738351DC53529009B97F5 /* AutorsViewModel.swift */,
 				A98E56BA1DBC97C300F8725F /* NoteViewController.swift */,
-				A90738271DC477E6009B97F5 /* AutorsViewModel.swift */,
+				A90738271DC477E6009B97F5 /* NoteViewModel.swift */,
+				A90738331DC52E47009B97F5 /* NewsTableViewCell.swift */,
 			);
-			name = Readers;
+			name = Autor;
 			sourceTree = "<group>";
 		};
 		A9E3C3F71DBF5C9000DD570B /* ScoopsTests */ = {
@@ -248,6 +257,7 @@
 				A9CB2A8A1DBBEEC100EA4500 /* Assets.xcassets in Resources */,
 				A9CB2A961DBBF11A00EA4500 /* Readers.storyboard in Resources */,
 				A9CB2A991DBBF47C00EA4500 /* Autors.storyboard in Resources */,
+				A90738381DC5542D009B97F5 /* robot.png in Resources */,
 				A9CB2A881DBBEEC100EA4500 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,14 +271,16 @@
 			files = (
 				A907382C1DC5047D009B97F5 /* AzureStorage.swift in Sources */,
 				A98E56BB1DBC97C300F8725F /* NoteViewController.swift in Sources */,
+				A90738341DC52E47009B97F5 /* NewsTableViewCell.swift in Sources */,
 				A98E56B91DBC96A800F8725F /* AutorsTableViewController.swift in Sources */,
 				A98E56BD1DBC9B5400F8725F /* ListNewsTableViewController.swift in Sources */,
 				A9EFE9871DBEA2760039B5FF /* AzureUtils.swift in Sources */,
 				A9CB2A851DBBEEC100EA4500 /* LoginViewController.swift in Sources */,
 				A98E56C21DBD0FC200F8725F /* modelNews.swift in Sources */,
-				A90738281DC477E7009B97F5 /* AutorsViewModel.swift in Sources */,
+				A90738281DC477E7009B97F5 /* NoteViewModel.swift in Sources */,
 				A9CB2A831DBBEEC100EA4500 /* AppDelegate.swift in Sources */,
 				A98F9D171DC113B000268C9D /* AzureApiUtils.swift in Sources */,
+				A90738361DC53529009B97F5 /* AutorsViewModel.swift in Sources */,
 				A98E56BF1DBC9DF500F8725F /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
