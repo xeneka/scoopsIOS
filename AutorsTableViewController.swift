@@ -42,8 +42,7 @@ class AutorsTableViewController: UITableViewController {
         loadNews()
         
         
-        let prueba = dataNews(title: "Titulo noticia", text: "Este es el titulo", blob: image!, authors: "Auto", coordenadas: (0,0), typeBlog: .img, urlFromBlob: "URLDAD")
-        model.append(prueba)
+       
         
         
     }
@@ -70,10 +69,22 @@ class AutorsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellnews", for: indexPath) as! NewsTableViewCell
 
         // Configure the cell...
-
-        cell.textNew.text = model[indexPath.row].title
         
-        cell.ImageNew.image = UIImage(data: model[indexPath.row].blob)
+        let data = model[indexPath.row]
+
+        cell.textNew.text = data.title
+        
+        cell.ImageNew.image = UIImage(data: data.blob)
+        
+       
+        
+        if data.visible {
+            cell.situacionNew.text = "Publicada"
+        }else{
+            cell.situacionNew.text = "No publicada"
+        }
+        
+        
         return cell
     }
  
@@ -138,7 +149,7 @@ extension AutorsTableViewController {
                 
                 
                 
-                let newItem = dataNews(title: each["title"] as! String, text: each["text"] as! String, blob: self.image!, authors: "Auto", coordenadas: (0,0), typeBlog: .img, urlFromBlob: each["urlPhoto"] as! String)
+                let newItem = dataNews(title: each["title"] as! String, text: each["text"] as! String, blob: self.image!, authors: "Auto", coordenadas: (0,0), typeBlog: .img, urlFromBlob: each["urlPhoto"] as! String, visible: each["visible"] as! Bool, idnew:each["id"] as! String)
                 self.model.append(newItem)
                 
             }

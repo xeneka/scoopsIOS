@@ -146,10 +146,10 @@
 			children = (
 				A9CB2A981DBBF47C00EA4500 /* Autors.storyboard */,
 				A98E56B81DBC96A800F8725F /* AutorsTableViewController.swift */,
+				A90738331DC52E47009B97F5 /* NewsTableViewCell.swift */,
 				A90738351DC53529009B97F5 /* AutorsViewModel.swift */,
 				A98E56BA1DBC97C300F8725F /* NoteViewController.swift */,
 				A90738271DC477E6009B97F5 /* NoteViewModel.swift */,
-				A90738331DC52E47009B97F5 /* NewsTableViewCell.swift */,
 			);
 			name = Autor;
 			sourceTree = "<group>";
