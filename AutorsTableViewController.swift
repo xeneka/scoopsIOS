@@ -76,7 +76,9 @@ class AutorsTableViewController: UITableViewController {
         
         cell.ImageNew.image = UIImage(data: data.blob)
         
-       
+        cell.changeSituacionValue.tag = indexPath.row
+        cell.changeSituacionValue.addTarget(self, action: #selector(self.buttonClicked(sender:)), for: UIControlEvents.touchUpInside)
+        
         
         if data.visible {
             cell.situacionNew.text = "Publicada"
@@ -162,5 +164,15 @@ extension AutorsTableViewController {
         
     }
     
+    func buttonClicked(sender:UIButton) {
+        
+        let buttonRow = sender.tag
+        print(buttonRow)
+        
+        azureApi.findNew(idnew: self.model[buttonRow].idnew! )
+        
+        
+    }    
+       
     
 }

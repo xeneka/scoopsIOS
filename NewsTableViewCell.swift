@@ -32,5 +32,12 @@ class NewsTableViewCell: UITableViewCell {
     @IBAction func changeSituation(_ sender: AnyObject) {
     }
     
+    @IBOutlet weak var changeSituacionValue: UIButton!
 
+    
+   
+
+    
+    
+    
 }

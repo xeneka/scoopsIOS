@@ -34,6 +34,67 @@ class dataStackAzure{
         
     }
     
+    func makeVisibleNew(idNew:String){
+        
+        let tableMS = client.table(withName: "Autors")
+        
+        //tableMS.update(<#T##item: [AnyHashable : Any]##[AnyHashable : Any]#>, completion: <#T##MSItemBlock?##MSItemBlock?##([AnyHashable : Any]?, Error?) -> Void#>)
+        
+        
+    }
+    
+    func findNew(idnew:String){
+        
+        let tableMS = client.table(withName: "Autors")
+        
+        //let query = tableMS.query(with: NSPredicate(format: "id == '1c4885cd-51df-4cbc-ba3f-f780c9d559db'"))
+        
+        let query = tableMS.query(with: NSPredicate(format: "id contains[c] %@",idnew))
+        
+        query.read { (result, error) in
+            
+            if let _ = error {
+                
+                print(error)
+                
+                return;
+            }else{
+                
+                print(result?.totalCount)
+                
+                if let items = result {
+                    
+                    
+                    
+                    for item in items.items! {
+                        
+                        var itemNew = item as! [String:AnyObject]
+                        itemNew["visible"] = 1 as AnyObject?
+                        tableMS.update(itemNew, completion: { (result, error) in
+                            
+                            if let _ = error{
+                                print(error)
+                                return
+                            }
+                            
+                            print(result)
+                            
+                        })
+                    }
+                    
+                   
+                    
+                }
+
+                
+                
+            }
+            
+        }
+        
+        
+    }
+    
     
     
     

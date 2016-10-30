@@ -53,6 +53,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="ImageNew" destination="uJm-2U-GPR" id="KTw-xk-xVn"/>
+                                    <outlet property="changeSituacionValue" destination="M3J-zG-h80" id="uaD-Hg-NJt"/>
                                     <outlet property="situacionNew" destination="aBk-bD-wiQ" id="1u1-TS-weW"/>
                                     <outlet property="textNew" destination="Iyj-UE-rq1" id="fdP-FC-Ixa"/>
                                 </connections>
