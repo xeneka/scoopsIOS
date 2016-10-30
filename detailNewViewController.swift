@@ -11,6 +11,7 @@ import UIKit
 class detailNewViewController: UIViewController {
 
     var model: dataNews?
+    var stack = dataStackAzure()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +39,11 @@ class detailNewViewController: UIViewController {
     @IBOutlet weak var detailTextNew: UITextView!
     
     @IBAction func votoPositivo(_ sender: AnyObject) {
+        stack.voteNew(idNew: (model?.idnew)!, vote: 1)
     }
     
     @IBAction func VotoNegativo(_ sender: AnyObject) {
+        stack.voteNew(idNew: (model?.idnew)!, vote: -1)
     }
 
     /*

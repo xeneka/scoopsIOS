@@ -169,7 +169,19 @@ class dataStackAzure{
     
     
     
-    
+    func voteNew(idNew:String, vote:NSNumber){
+       
+        let tableMS = client.table(withName: "Voto")
+        
+        tableMS.insert(["idNew":idNew, "voto":vote]) { (result, error) in
+            
+            if let _ = error {
+                print(error)
+                return
+            }
+        }
+        
+    }
     
     
     
