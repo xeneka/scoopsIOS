@@ -12,10 +12,8 @@ class AutorsTableViewController: UITableViewController {
 
     
     var model = [dataNews]()
-    
-   
-    
     let azureApi = dataStackAzure()
+    let storage = AzureStorage()
     
     
     let image = UIImageJPEGRepresentation(UIImage(named: "robot.png")!,0.9)
@@ -74,7 +72,18 @@ class AutorsTableViewController: UITableViewController {
 
         cell.textNew.text = data.title
         
+        
+        // Defino una imagen temporal que cambiare cuando se descargue la imagen
         cell.ImageNew.image = UIImage(data: data.blob)
+        
+        // Descargo en segundo plano la image y cuando me la descargo la cambio
+        storage.downloadBlobFromStorage(nameFile: data.urlData){ (data: Any) in
+            
+            
+            cell.ImageNew.image = UIImage(data: data as! Data)
+            
+        }
+
         
         cell.changeSituacionValue.tag = indexPath.row
         cell.changeSituacionValue.addTarget(self, action: #selector(self.buttonClicked(sender:)), for: UIControlEvents.touchUpInside)

@@ -12,6 +12,7 @@ class ListNewsTableViewController: UITableViewController {
 
     
     var model = [dataNews]()
+    let storage = AzureStorage()
     
     @IBAction internal func ReturnLogin(_ sender: AnyObject){
          present(returnLoginScene(), animated: true, completion: nil)
@@ -28,6 +29,7 @@ class ListNewsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()+
        
+        
         
     }
     
@@ -52,7 +54,15 @@ class ListNewsTableViewController: UITableViewController {
             
             self.tableView.reloadData()
         }
+            
+   
+            
+            
         }
+        
+        
+        
+        
         
     }
 
@@ -82,6 +92,18 @@ class ListNewsTableViewController: UITableViewController {
         let data = model[indexPath.row]
         
         cell.titleNew.text = data.title
+        
+        // Defino una imagen temporal que cambiare cuando se descargue la imagen
+        cell.imageNew.image = UIImage(data: data.blob)
+        
+        // Descargo en segundo plano la image y cuando me la descargo la cambio
+        storage.downloadBlobFromStorage(nameFile: data.urlData){ (data: Any) in
+            
+            
+            cell.imageNew.image = UIImage(data: data as! Data)
+            
+        }
+        
         
         return cell
     }

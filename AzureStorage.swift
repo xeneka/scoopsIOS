@@ -10,7 +10,7 @@ import Foundation
 
 class AzureStorage{
     
-    static let sas = "sv=2015-04-05&ss=bfqt&srt=sco&sp=rwdlacup&se=2016-10-30T01:52:41Z&st=2016-10-29T17:52:41Z&spr=https&sig=tdNGvm7oCkphbROuhiffFHsQjC70Bqj9%2F3NyI6OGxp8%3D"
+    static let sas = "sv=2015-04-05&ss=bfqt&srt=sco&sp=rwdlacup&se=2016-10-31T19:31:43Z&st=2016-10-31T11:31:43Z&spr=https&sig=5WnY01Lr1uQ4tiik6qEtP%2BVnvf5F6p013X6fb0gmi0Y%3D"
     
     static let accountName = "abmpracticaazure"
     
@@ -78,6 +78,35 @@ class AzureStorage{
         }
         
        
+        
+    }
+    
+    
+    //MARK: - descarga blob
+    
+    func downloadBlobFromStorage(nameFile:String, completion:@escaping (_ result:Any)->() ) {
+        
+
+        let container = createNewContainer()
+        
+        
+        
+        let theBlob = container?.blockBlobReference(fromName: nameFile )
+        
+        var dataBlog:Data?
+        
+        theBlob?.downloadToData { (error, data) in
+            
+            if let _ = error {
+                print(error)
+                return
+            }
+            
+            completion(data)
+            dataBlog = data
+            
+        }
+        
         
     }
 

@@ -10,7 +10,6 @@
 		A90738281DC477E7009B97F5 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90738271DC477E6009B97F5 /* NoteViewModel.swift */; };
 		A907382C1DC5047D009B97F5 /* AzureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A907382B1DC5047D009B97F5 /* AzureStorage.swift */; };
 		A90738341DC52E47009B97F5 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90738331DC52E47009B97F5 /* NewsTableViewCell.swift */; };
-		A90738361DC53529009B97F5 /* AutorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90738351DC53529009B97F5 /* AutorsViewModel.swift */; };
 		A90738381DC5542D009B97F5 /* robot.png in Resources */ = {isa = PBXBuildFile; fileRef = A90738371DC5542D009B97F5 /* robot.png */; };
 		A96AC4E61DC66ECD00096CEC /* ReaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96AC4E51DC66ECD00096CEC /* ReaderTableViewCell.swift */; };
 		A96AC4E81DC68AED00096CEC /* detailNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96AC4E71DC68AED00096CEC /* detailNewViewController.swift */; };
@@ -38,7 +37,6 @@
 		A90738271DC477E6009B97F5 /* NoteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 		A907382B1DC5047D009B97F5 /* AzureStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureStorage.swift; sourceTree = "<group>"; };
 		A90738331DC52E47009B97F5 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
-		A90738351DC53529009B97F5 /* AutorsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutorsViewModel.swift; sourceTree = "<group>"; };
 		A90738371DC5542D009B97F5 /* robot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = robot.png; sourceTree = "<group>"; };
 		A96AC4E51DC66ECD00096CEC /* ReaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderTableViewCell.swift; sourceTree = "<group>"; };
 		A96AC4E71DC68AED00096CEC /* detailNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailNewViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 				A9CB2A981DBBF47C00EA4500 /* Autors.storyboard */,
 				A98E56B81DBC96A800F8725F /* AutorsTableViewController.swift */,
 				A90738331DC52E47009B97F5 /* NewsTableViewCell.swift */,
-				A90738351DC53529009B97F5 /* AutorsViewModel.swift */,
 				A98E56BA1DBC97C300F8725F /* NoteViewController.swift */,
 				A90738271DC477E6009B97F5 /* NoteViewModel.swift */,
 			);
@@ -288,7 +285,6 @@
 				A90738281DC477E7009B97F5 /* NoteViewModel.swift in Sources */,
 				A9CB2A831DBBEEC100EA4500 /* AppDelegate.swift in Sources */,
 				A98F9D171DC113B000268C9D /* AzureApiUtils.swift in Sources */,
-				A90738361DC53529009B97F5 /* AutorsViewModel.swift in Sources */,
 				A98E56BF1DBC9DF500F8725F /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
