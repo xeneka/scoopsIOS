@@ -7,19 +7,21 @@
 //
 
 import Foundation
-
+import CoreLocation
 
 final class noteViewModel{
     
     var model:dataNews
     let stackAzure:dataStackAzure
     
-    init(title:String, text:String,  Image: UIImage, stack:dataStackAzure ){
+    init(title:String, text:String,  Image: UIImage, stack:dataStackAzure, location:CLLocation ){
         
         stackAzure = stack
         
         
-        model = dataNews(title: title, text: text, blob: UIImageJPEGRepresentation(Image, 0.0)!, authors: (stackAzure.client.currentUser?.userId)!, coordenadas: (0,0), typeBlog: .img, urlFromBlob: UUID().uuidString, visible:false ,publicada:false)
+        
+        
+        model = dataNews(title: title, text: text, blob: UIImageJPEGRepresentation(Image, 0.0)!, authors: (stackAzure.client.currentUser?.userId)!, coordenadas: (location.coordinate.latitude,location.coordinate.longitude), typeBlog: .img, urlFromBlob: UUID().uuidString, visible:false ,publicada:false)
         
       
 
@@ -39,7 +41,7 @@ final class noteViewModel{
         
         // Guardo la noticia
         
-        stackAzure.insertNew(title: model.title, text: model.text, latitude: 0.0, longitude: 0.0, urlPhoto: model.urlData)
+        stackAzure.insertNew(title: model.title, text: model.text, latitude: NSNumber(value: self.model.coordenadas.0), longitude: NSNumber(value: self.model.coordenadas.1), urlPhoto: model.urlData)
         
         
     }

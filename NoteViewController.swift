@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class NoteViewController: UIViewController {
 
@@ -15,11 +16,32 @@ class NoteViewController: UIViewController {
     
     var azureApi:dataStackAzure?
     
+    var gpsLocation:CLLocation?
+    
+    fileprivate let posicion = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
+        posicion.requestWhenInUseAuthorization()
         
+        let status = CLLocationManager.authorizationStatus()
+        
+        // Compruebo si tengo acceso a la localización
+        
+        if (!(status == CLAuthorizationStatus.denied) ){
+            
+            // Configuro el location manager
+            
+            posicion.delegate = self
+            posicion.desiredAccuracy = kCLLocationAccuracyBest
+             posicion.startUpdatingLocation()
+            
+            
+        }else{
+            print("No tienes autorizacion para ejecutar Location Manager")
+        }
         
       
         
@@ -30,6 +52,7 @@ class NoteViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
+       
         
         
     }
@@ -48,9 +71,11 @@ class NoteViewController: UIViewController {
     @IBAction func saveNote(_ sender: AnyObject) {
         
 
+        // Empieza a funcionar
+       
         
         
-        noteView = noteViewModel(title: titleNews.text!, text: textNews.text, Image: photoImage.image!,stack:azureApi!)
+        noteView = noteViewModel(title: titleNews.text!, text: textNews.text, Image: photoImage.image!,stack:azureApi!, location: gpsLocation!)
         noteView?.saveNews()
         
         
@@ -116,6 +141,42 @@ extension NoteViewController:UIImagePickerControllerDelegate, UINavigationContro
         
     }
     
+    
+    
+}
+
+//MARK: - uso el gps
+
+
+extension NoteViewController:CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(Error.self)
+        
+        
+    }
+    
+  
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        // Paramos que siga buscando la localiación. Consume mucha bateria
+        
+        self.posicion.stopUpdatingLocation()
+        
+        
+        // Mandamos la nota
+        
+        self.gpsLocation = locations.last
+        
+        print(self.gpsLocation)
+        
+        
+        
+    }
+    
+   
+
     
     
 }
