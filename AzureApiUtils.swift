@@ -23,7 +23,11 @@ class dataStackAzure{
         
         let tableMS = client.table(withName: "Autors")
         
-        tableMS.insert(["title" : title, "text": text, "latitude":latitude, "longitude":longitude, "urlPhoto":urlPhoto, "visible":false, "publicada":false]) { (result, error) in
+        print("********",client.currentUser?.userId)
+        
+        
+        
+        tableMS.insert(["title" : title, "text": text, "latitude":latitude, "longitude":longitude, "urlPhoto":urlPhoto, "visible":false, "publicada":false,"idautor":client.currentUser?.userId]) { (result, error) in
             
             if let _ = error {
                 print(error)
@@ -42,8 +46,6 @@ class dataStackAzure{
     func publishNew(idnew:String){
         
         let tableMS = client.table(withName: "Autors")
-        
-        //let query = tableMS.query(with: NSPredicate(format: "id == '1c4885cd-51df-4cbc-ba3f-f780c9d559db'"))
         
         let query = tableMS.query(with: NSPredicate(format: "id contains[c] %@",idnew))
         
@@ -100,10 +102,11 @@ class dataStackAzure{
     func readAllItemsInTable(_ completion:@escaping (_ result:Any)->()) -> [Dictionary<String, AnyObject>] {
         
         let tableMS = client.table(withName: "Autors")
+        let query = tableMS.query(with: NSPredicate(format: "idautor contains[c] %@",(client.currentUser?.userId)!))
         var data: [Dictionary<String, AnyObject>]? = []
         
         
-        tableMS.read { (results, error) in
+        query.read { (results, error) in
             if let _ = error {
                 print(error)
                 return
@@ -185,17 +188,17 @@ class dataStackAzure{
     
     
     
-    func login(provider: String, controller:UIViewController){
+    func login(provider: String, controller:UIViewController,completion:@escaping (_ result:Any?, _ error:Any?)->()){
         
         client.login(withProvider: provider, controller: controller, animated: true) { (user, error) in
             
             if let _ = error {
-                print("---",error)
+                completion(nil, error)
                 return
             }
             
-            print("-+-",user?.userId)
            
+           completion(user, nil)
             
         }
         

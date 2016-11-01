@@ -30,7 +30,6 @@
 		A9EFE9791DBE4DFF0039B5FF /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EFE9781DBE4DFF0039B5FF /* libxml2.2.tbd */; };
 		A9EFE97F1DBE524C0039B5FF /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EFE97E1DBE524C0039B5FF /* MicrosoftAzureMobile.framework */; };
 		A9EFE9851DBE59E40039B5FF /* AZSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EFE9841DBE59E40039B5FF /* AZSClient.framework */; };
-		A9EFE9871DBEA2760039B5FF /* AzureUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EFE9861DBEA2760039B5FF /* AzureUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +61,6 @@
 		A9EFE97E1DBE524C0039B5FF /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
 		A9EFE9801DBE52890039B5FF /* Scoops-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scoops-Bridging-Header.h"; sourceTree = "<group>"; };
 		A9EFE9841DBE59E40039B5FF /* AZSClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AZSClient.framework; sourceTree = "<group>"; };
-		A9EFE9861DBEA2760039B5FF /* AzureUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,12 +90,13 @@
 			isa = PBXGroup;
 			children = (
 				A90738371DC5542D009B97F5 /* robot.png */,
-				A9E3C4051DBF5DF300DD570B /* AzureUtils */,
-				A9E3C4061DBF5DFE00DD570B /* Models */,
-				A98E56C01DBC9DFD00F8725F /* Utils */,
+				A9CB2A811DBBEEC100EA4500 /* Scoops */,
 				A9CB2A9A1DBBF48600EA4500 /* Autor */,
 				A9CB2A971DBBF12000EA4500 /* Reader */,
-				A9CB2A811DBBEEC100EA4500 /* Scoops */,
+				A9CB2A941DBBEFFD00EA4500 /* Main */,
+				A9E3C4061DBF5DFE00DD570B /* Models */,
+				A9E3C4051DBF5DF300DD570B /* AzureUtils */,
+				A98E56C01DBC9DFD00F8725F /* Utils */,
 				A9E3C3F71DBF5C9000DD570B /* ScoopsTests */,
 				A9CB2A801DBBEEC100EA4500 /* Products */,
 				A9EFE9771DBE4DFF0039B5FF /* Frameworks */,
@@ -117,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				A9CB2A821DBBEEC100EA4500 /* AppDelegate.swift */,
-				A9CB2A941DBBEFFD00EA4500 /* Main */,
 				A9CB2A891DBBEEC100EA4500 /* Assets.xcassets */,
 				A9CB2A8B1DBBEEC100EA4500 /* LaunchScreen.storyboard */,
 				A9CB2A8E1DBBEEC100EA4500 /* Info.plist */,
@@ -132,6 +130,7 @@
 				A9CB2A861DBBEEC100EA4500 /* Main.storyboard */,
 			);
 			name = Main;
+			path = Scoops;
 			sourceTree = "<group>";
 		};
 		A9CB2A971DBBF12000EA4500 /* Reader */ = {
@@ -169,7 +168,6 @@
 		A9E3C4051DBF5DF300DD570B /* AzureUtils */ = {
 			isa = PBXGroup;
 			children = (
-				A9EFE9861DBEA2760039B5FF /* AzureUtils.swift */,
 				A98F9D161DC113B000268C9D /* AzureApiUtils.swift */,
 				A907382B1DC5047D009B97F5 /* AzureStorage.swift */,
 			);
@@ -279,7 +277,6 @@
 				A90738341DC52E47009B97F5 /* NewsTableViewCell.swift in Sources */,
 				A98E56B91DBC96A800F8725F /* AutorsTableViewController.swift in Sources */,
 				A98E56BD1DBC9B5400F8725F /* ListNewsTableViewController.swift in Sources */,
-				A9EFE9871DBEA2760039B5FF /* AzureUtils.swift in Sources */,
 				A9CB2A851DBBEEC100EA4500 /* LoginViewController.swift in Sources */,
 				A98E56C21DBD0FC200F8725F /* modelNews.swift in Sources */,
 				A90738281DC477E7009B97F5 /* NoteViewModel.swift in Sources */,

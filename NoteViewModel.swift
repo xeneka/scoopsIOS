@@ -12,17 +12,26 @@ import Foundation
 final class noteViewModel{
     
     var model:dataNews
+    let stackAzure:dataStackAzure
     
-    init(title:String, Author:String, Image:UIImage, text:String ){
+    init(title:String, text:String,  Image: UIImage, stack:dataStackAzure ){
         
-        model = dataNews(title: title, text: text, blob: UIImageJPEGRepresentation(Image, 0.0)!, authors: Author, coordenadas: (0,0), typeBlog: .img, urlFromBlob: UUID().uuidString, visible:false ,publicada:false)
+        stackAzure = stack
+        
+        
+        model = dataNews(title: title, text: text, blob: UIImageJPEGRepresentation(Image, 0.0)!, authors: (stackAzure.client.currentUser?.userId)!, coordenadas: (0,0), typeBlog: .img, urlFromBlob: UUID().uuidString, visible:false ,publicada:false)
+        
+      
+
+        
+        
         
     }
     
     func saveNews(){
         
         let blog = AzureStorage()
-        let stackAzure = dataStackAzure()
+        
         
         // Guardo la Imagen
         

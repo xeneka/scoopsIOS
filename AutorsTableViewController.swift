@@ -20,7 +20,7 @@ class AutorsTableViewController: UITableViewController {
     
     @IBAction func ReturnLogin(_ sender: AnyObject) {
         
-       present(returnLoginScene(), animated: true, completion: nil)
+        present(returnLoginScene(), animated: true, completion: nil)
         
     }
     
@@ -35,9 +35,25 @@ class AutorsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        //let azureApi = dataStackAzure();
-        //azureApi.login(provider: "facebook", controller: self)
-        loadNews()
+        
+        azureApi.login(provider: "facebook", controller: self){ (user: Any?, error:Any?) in
+            
+           
+            
+            if let _ = error  {
+                
+                print("Error")
+                return
+            }
+            
+            
+            let registerUser = user as! MSUser
+            
+            
+             self.loadNews()
+            
+        }
+       
         
         
        
@@ -136,15 +152,20 @@ class AutorsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let vc = segue.destination as? NoteViewController
+        
+        vc?.azureApi = self.azureApi
+        
     }
-    */
+ 
 
 }
 
@@ -177,7 +198,7 @@ extension AutorsTableViewController {
     func buttonClicked(sender:UIButton) {
         
         let buttonRow = sender.tag
-        print(buttonRow)
+        
         
         azureApi.publishNew(idnew: self.model[buttonRow].idnew! )
         

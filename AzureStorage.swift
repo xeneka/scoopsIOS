@@ -10,7 +10,7 @@ import Foundation
 
 class AzureStorage{
     
-    static let sas = "sv=2015-04-05&ss=bfqt&srt=sco&sp=rwdlacup&se=2016-10-31T19:31:43Z&st=2016-10-31T11:31:43Z&spr=https&sig=5WnY01Lr1uQ4tiik6qEtP%2BVnvf5F6p013X6fb0gmi0Y%3D"
+    static let sas = "sv=2015-04-05&ss=bfqt&srt=sco&sp=rwdlacup&se=2016-11-01T17:54:03Z&st=2016-11-01T09:54:03Z&spr=https&sig=KT7PkTnK1cf0bsPGLy41mTJCsUjKnB%2BZGMxlG3w8TsM%3D"
     
     static let accountName = "abmpracticaazure"
     
@@ -98,7 +98,7 @@ class AzureStorage{
         theBlob?.downloadToData { (error, data) in
             
             if let _ = error {
-                print(error)
+               // print(error)
                 return
             }
             

@@ -13,6 +13,7 @@ class NoteViewController: UIViewController {
     
     var noteView:noteViewModel? = nil
     
+    var azureApi:dataStackAzure?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,7 @@ class NoteViewController: UIViewController {
 
         
         
-        noteView = noteViewModel(title: titleNews.text!,Author: "Autor1", Image: photoImage.image!, text: textNews.text  )
+        noteView = noteViewModel(title: titleNews.text!, text: textNews.text, Image: photoImage.image!,stack:azureApi!)
         noteView?.saveNews()
         
         
